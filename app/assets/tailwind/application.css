@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@layer components {
+  .section-grid { @apply mx-auto grid max-w-7xl gap-10 px-6 py-28 lg:grid-cols-[15rem_1fr]; }
+  .section-label { @apply font-mono text-xs uppercase tracking-[.2em] text-emerald-400; }
+  .section-title { @apply text-4xl font-semibold tracking-[-.04em] text-white sm:text-6xl; }
+  .body-copy { @apply max-w-3xl text-lg leading-8 text-stone-300; }
+  .eyebrow { @apply font-mono text-xs uppercase tracking-[.16em] text-stone-500; }
+  .pill-link { @apply rounded-full border border-white/15 px-5 py-2.5 text-sm text-white transition hover:border-emerald-400/60; }
+  .tech { @apply rounded-full border border-white/10 bg-white/[.03] px-3 py-1.5 font-mono text-xs text-stone-400; }
+  .case-copy { @apply leading-7 text-stone-400; }
+  .case-copy p { @apply mb-4 whitespace-pre-line; }
+  .admin-input { @apply w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white outline-none focus:border-emerald-400; }
+  .admin-button { @apply rounded-lg bg-emerald-400 px-4 py-2 font-medium text-stone-950; }
+}

@@ -1,0 +1,112 @@
+pt-BR:
+  portfolio:
+    seo:
+      title: "Kyle Teixeira Trindade — Engenheiro de Software"
+      description: "Engenheiro de software Ruby on Rails focado em sistemas B2B, SaaS, integrações e automação de processos de negócio."
+    nav:
+      experience: "Experiência"
+      work: "Projetos"
+      expertise: "Especialidades"
+      contact: "Contato"
+      get_in_touch: "Entre em contato"
+    hero:
+      location: "Brasil · Remoto"
+      role: "Engenheiro de Software"
+      focus: "Ruby on Rails · Sistemas B2B · SaaS · Integrações"
+      intro: "Construo aplicações web orientadas a negócios e transformo processos operacionais reais em software confiável."
+      view_work: "Ver projetos"
+      resume: "Currículo"
+    about:
+      label: "01 / Sobre"
+      title: "Software construído em torno de como os negócios funcionam."
+      first: "Sou engenheiro de software focado principalmente em Ruby on Rails e aplicações de negócio com forte ênfase em backend. Minha experiência inclui software para importações, embarques, processos financeiros, negociações, gestão de fornecedores e processamento de documentos."
+      second: "Gosto de entender um processo — suas restrições, regras e casos de exceção — e traduzi-lo em software de fácil manutenção."
+    experience:
+      label: "02 / Experiência profissional"
+      private: "Trabalho profissional em destaque · Código privado"
+    work:
+      label: "03 / Projetos em destaque"
+      screenshots: "Capturas de tela tratadas\ndisponíveis sob solicitação"
+      details: "Ver detalhes de engenharia"
+    expertise:
+      label: "04 / Especialidades técnicas"
+      title: "Profundidade em backend para software operacional."
+      rails_title: "Engenharia Rails"
+      rails_text: "Ruby, Rails, Active Record, REST, modelagem de domínio"
+      data_title: "Dados e processamento"
+      data_text: "PostgreSQL, Sidekiq, Redis, fluxos em segundo plano"
+      saas_title: "Arquitetura SaaS"
+      saas_text: "Multi-tenancy, Pundit, papéis e recursos por empresa"
+      integrations_title: "Integrações"
+      integrations_text: "GraphQL, API Monday.com e normalização de dados externos"
+      security_title: "Segurança de aplicações"
+      security_text: "Rack::Attack, CSP, trilhas de auditoria e mitigação de IDOR"
+      documents_title: "Automação de documentos"
+      documents_text: "OCR, regex, extração de palavras-chave e verificação com ClamAV"
+    education:
+      label: "05 / Formação"
+      degree: "Engenharia de Software"
+      status: "Graduação concluída"
+    contact:
+      label: "07 / Contato"
+      title: "Vamos transformar o próximo processo de negócio em software confiável."
+    resume:
+      label: "06 / Currículo"
+      title: "Experiência em detalhes."
+      description: "Veja meu currículo completo ou abra o PDF em uma nova aba."
+      open: "Abrir PDF ↗"
+      download: "Baixar"
+      fallback: "Seu navegador não consegue exibir este PDF."
+    footer: "Ruby on Rails · Sistemas B2B · SaaS"
+    records:
+      b2b_import_operations_platform:
+        title: "Plataforma B2B de Importação e Operações"
+        subtitle: "Ruby on Rails · PostgreSQL · Monday.com · GraphQL · Sidekiq · Redis"
+        short_description: "Trabalho profissional de engenharia em um sistema voltado ao cliente que transforma fluxos de importação, embarque, finanças e negociações em software Rails dedicado."
+        description: |
+          Problema
+          As informações operacionais estavam distribuídas em vários quadros do Monday.com e domínios de negócio. Os clientes precisavam de uma experiência coesa para importações, embarques, negociações, créditos, multas, descontos, indicadores financeiros e cálculos de valores finais.
+
+          No que trabalhei
+          Integrei Rails com a API GraphQL do Monday.com, normalizei registros de quadros financeiros, embarques, negociações e clientes — incluindo subitens — e os mapeei para conceitos da aplicação. Traduzi regras específicas de clientes e estados operacionais em comportamentos Rails e customizei a autenticação Devise em torno de CNPJ brasileiro normalizado e dados do cliente.
+
+          Destaques de engenharia
+          • Construí consultas GraphQL e mapeamentos específicos por quadro sem expor identificadores privados.
+          • Usei Sidekiq e Redis para processamento assíncrono confiável.
+          • Modelei dados relacionais de negócio com PostgreSQL, Active Record e lógica de serviço focada.
+          • Implementei limitação de requisições com Rack::Attack para login e tráfego geral, além de controles CSP.
+          • Tratei propriedade de recursos, riscos de acesso do tipo IDOR e autorização de clientes.
+          • Adicionei auditoria estruturada de requisições e rastreabilidade das ações dos usuários.
+      stagilux:
+        short_description: "SaaS Multi-tenant para Gestão de Fornecedores e Documentos"
+        description: |
+          Problema
+          A qualificação de fornecedores depende do contexto da empresa, acesso por função, validade de documentos e análise manual. O projeto explora como um SaaS B2B pode tornar esse fluxo explícito e automatizável.
+
+          No que trabalhei
+          Modelei empresas, vínculos e recursos por empresa com acts_as_tenant. Os papéis incluem administrador da empresa, funcionário, fornecedor, gestor de homologação e visualizador, com estados ativo, suspenso, inativo e bloqueado. Policies e scopes do Pundit mantêm o acesso consciente do tenant e da função.
+
+          Destaques de engenharia
+          • Ciclo do fornecedor desde rascunho até análise e aprovação.
+          • Estados de documentos pendentes e expirados, com atualização agendada de validade e notificações.
+          • Ciclo independente de verificação: aguardando, limpo, infectado ou falhou.
+          • Verificação assíncrona com ClamAV antes de o documento prosseguir.
+          • Extração de texto por OCR seguida de validações por palavras-chave e regex para automatizar parte da conferência documental.
+      checkoutpay:
+        short_description: "Arquitetura de Processamento de Pagamentos"
+        description: |
+          Projeto de engenharia focado em conceitos de processamento confiável de transações, sem se apresentar como um provedor de pagamentos em produção.
+
+          Modela o ciclo do pagamento de pendente para processando e, então, concluído ou falhou. Uma chave de idempotência evita cobranças duplicadas acidentais, enquanto um serviço focado na criação da cobrança e um processador assíncrono separam a requisição do processamento externo.
+      opsflow:
+        short_description: "Experimento de Microsserviços Rails e Orquestração de Fluxos"
+        description: |
+          Projeto de arquitetura e aprendizado que explora a comunicação entre serviços de autenticação, intenção, planejamento, processo e tarefas.
+
+          O fluxo conceitual conduz o usuário da autenticação por token à captura da intenção, planejamento do fluxo, criação do processo e orquestração de tarefas. JWT/HS256 protege os pontos de entrada, enquanto Sidekiq e Redis sustentam filas assíncronas críticas, padrão e de baixa prioridade.
+      estoquei:
+        short_description: "Aplicação de Comércio e Estoque"
+        description: |
+          Aplicação Rails que modela três atores de negócio: clientes consultam produtos, gerenciam o carrinho e finalizam a compra; lojistas administram produtos e pedidos; fornecedores utilizam seu próprio painel e fluxos.
+
+          O projeto demonstra associações Active Record, modelagem relacional e fluxos orientados por papéis em um domínio prático de comércio.

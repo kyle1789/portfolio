@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+if gem list --no-installed --exact --silent foreman; then
+  exec foreman start -f Procfile.dev "$@"
+else
+  exec bin/rails server "$@"
+fi
