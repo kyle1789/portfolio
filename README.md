@@ -24,11 +24,11 @@ Screenshots use Active Storage's local disk service. On Fly, the SQLite database
 
 The repository includes a production Dockerfile and a `fly.toml` configured for one small Fly Machine in São Paulo, auto-stop/auto-start, and a 1 GB persistent volume. The volume stores all SQLite databases and Active Storage uploads under `/rails/storage`.
 
-Before the first deploy, confirm that `kyle-trindade-portfolio` is available or change `app` in `fly.toml`, then run:
+The Fly application is configured as `portfolio-ktt`. For a fresh Fly account, create the application and its volume before deploying:
 
 ```bash
 fly auth login
-fly apps create kyle-trindade-portfolio
+fly apps create portfolio-ktt
 fly volumes create portfolio_data --region gru --size 1
 fly secrets set SECRET_KEY_BASE="$(bin/rails secret)"
 fly secrets set ADMIN_USERNAME=kyle ADMIN_PASSWORD='choose-a-long-unique-password'
